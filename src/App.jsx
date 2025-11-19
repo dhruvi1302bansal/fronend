@@ -1,15 +1,18 @@
 
 import './App.css'
 import Home from './pages/Home.jsx'
+import Footer from './components/Footer.jsx'
+import Navbar from './components/Navbar.jsx'
 
 function App() {
 
 
   return (
     <>
-     <h1 className="text-6xl font-bold underline">
-    Hello world!
-  </h1>
+      <Footer/>
+      <Home />
+      <Navbar />
+
     </>
   )
 }
