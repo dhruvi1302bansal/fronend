@@ -1,51 +1,216 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, Menu, X, Search, ShoppingBag, User } from 'lucide-react';
+
+// --- COLOR PALETTE ---
+const COLORS = {
+  oliveDark: "#2F3E28",      // Main Navbar
+  oliveLight: "#4A5D41",     // Hover text
+  beigeText: "#F1F3EB",      // Icons/Text
+  paper: "#cbab1cff",          // Scroll Paper
+  gold: "#D4AF37",           // Accents
+  wood: "linear-gradient(to bottom, #5D4037, #3E2723, #1a0f0d)", // Rod Texture
+};
+
+// --- DATA ---
+const NAV_DATA = {
+  programs: {
+    title: "Programs",
+    layout: "grid",
+    items: [
+      "Gut & Digestion Care", "Women's Hormonal Balance", "Stress, Anxiety & Sleep",
+      "Skin Care & Radiance", "Chronic Pain & Migraine", "Weight & Metabolic Health",
+      "Thyroid & Autoimmune", "Respiratory & Allergies", "Hair & Scalp Restoration",
+      "Sexual Wellness", "Pediatrics", "Post-Illness Immunity"
+    ]
+  },
+  assessments: {
+    title: "Assessments",
+    layout: "list",
+    items: ["Free Dosha Quiz (AI)", "Skin Disease Analysis", "Upload Medical Reports", "Track Progress"]
+  },
+  consultation: {
+    title: "Consultation",
+    layout: "list",
+    items: ["Book 1:1 with Vaidya", "Pricing & Packages", "Follow-up Booking", "Find a Center"]
+  },
+  wisdom: {
+    title: "Wisdom Hub",
+    layout: "list",
+    items: ["Our Mission", "Doctor Profiles", "Science of Ayurveda", "Blog & Insights", "Case Studies"]
+  }
+};
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // --- THE SCROLL ANIMATION COMPONENT ---
+  const ScrollDropdown = ({ categoryKey }) => {
+    const data = NAV_DATA[categoryKey];
+    const isOpen = activeDropdown === categoryKey;
+
+    return (
+      <div 
+        className={`absolute top-full left-1/2 transform -translate-x-1/2 pt-0 transition-all duration-300
+          ${isOpen ? 'visible' : 'invisible delay-500'}`} // Delay invisible so animation finishes
+        style={{ width: data.layout === 'grid' ? '600px' : '300px' }}
+      >
+        {/* 1. TOP ROD (Fixed Anchor) */}
+        <div 
+          className="w-full h-5 rounded-full relative z-30 shadow-lg"
+          style={{ background: COLORS.wood }}
+        >
+          {/* Gold Tips */}
+          <div className="absolute left-0 top-0 h-full w-4 rounded-l-full bg-yellow-600 border-r border-yellow-900"></div>
+          <div className="absolute right-0 top-0 h-full w-4 rounded-r-full bg-yellow-600 border-l border-yellow-900"></div>
+        </div>
+
+        {/* 2. THE PAPER (Unrolling Action) */}
+        <div 
+          className={`relative mx-auto bg-[#F9F5E3] overflow-hidden shadow-2xl transition-all ease-[cubic-bezier(0.25,1,0.5,1)] duration-700
+            ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+          style={{ 
+            width: '92%', // Paper is narrower than rods
+            marginTop: '-8px', // Tucked inside top rod
+            marginBottom: '-8px', // Tucked inside bottom rod
+            zIndex: 10, // Behind the rods
+            backgroundImage: 'url("https://www.transparenttextures.com/patterns/aged-paper.png")'
+          }}
+        >
+          <div className="p-8 pt-6">
+            {/* Om Symbol Watermark */}
+            {/* <div className="text-center mb-4 opacity-40 select-none">
+              <span className="text-[#2F3E28] text-2xl font-serif">ॐ*</span>
+            </div> */}
+
+            {/* Content */}
+            {data.layout === 'grid' ? (
+              <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                {data.items.map((item, idx) => (
+                  <a key={idx} href="#" className="group flex items-center text-[#2F3E28] hover:text-[#D4AF37] transition-colors">
+                    <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <span className="font-serif font-medium text-sm">{item}</span>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <ul className="space-y-4 text-center">
+                {data.items.map((item, idx) => (
+                  <li key={idx}>
+                    <a href="#" className="block font-serif text-[#2F3E28] text-lg hover:text-[#8F9648] transition-transform hover:scale-105">
+                      {item}
+                    </a>
+                    {idx !== data.items.length - 1 && <div className="h-px w-16 mx-auto bg-[#2F3E28]/10 mt-3"></div>}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+
+        {/* 3. BOTTOM ROD (Rides the bottom of the paper) */}
+        <div 
+          className={`w-full h-6 rounded-full relative z-30 shadow-2xl transition-all ease-[cubic-bezier(0.25,1,0.5,1)] duration-700
+            ${isOpen ? 'translate-y-0' : '-translate-y-full'}`} // Moves up when closed
+          style={{ background: COLORS.wood }}
+        >
+           {/* Gold Tips */}
+           <div className="absolute -left-1 top-0 h-full w-5 rounded-l-full bg-yellow-600 border-r border-yellow-900"></div>
+           <div className="absolute -right-1 top-0 h-full w-5 rounded-r-full bg-yellow-600 border-l border-yellow-900"></div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <nav className="fixed w-full bg-vedara-light/90 backdrop-blur-md z-50 border-b border-stone-200 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer">
-            <span className="font-serif text-3xl font-bold text-vedara-green tracking-wider">VEDARA</span>
+    <nav 
+      className={`sticky top-0 w-full z-[100] font-sans shadow-xl transition-all duration-300`}
+      style={{ backgroundColor: COLORS.oliveDark }}
+    >
+      <div className={`w-full px-6 lg:px-12 transition-all duration-300 ${scrolled ? 'py-2' : 'py-5'}`}>
+        <div className="flex justify-between items-center relative">
+          
+          {/* LOGO */}
+          <div className="flex items-center gap-3 cursor-pointer z-50">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#F1F3EB] text-[#2F3E28] font-bold text-xl font-serif border-2 border-[#D4AF37]">
+              V
+            </div>
+            <div className="flex flex-col text-[#F1F3EB]">
+              <span className="font-serif text-2xl font-bold tracking-widest leading-none">VEDARA</span>
+            </div>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <a href="#" className="text-gray-600 hover:text-vedara-green transition font-medium">Our Approach</a>
-            <a href="#" className="text-gray-600 hover:text-vedara-green transition font-medium">Programs</a>
-            <a href="#" className="text-gray-600 hover:text-vedara-green transition font-medium">Science</a>
-            <a href="#" className="text-gray-600 hover:text-vedara-green transition font-medium">Login</a>
-            <button className="bg-vedara-clay hover:bg-orange-800 text-white px-6 py-2.5 rounded-md font-bold transition duration-300">
-              Book Consultation
-            </button>
+          {/* DESKTOP MENU */}
+          <div className="hidden lg:flex items-center space-x-10 h-full">
+            {Object.keys(NAV_DATA).map((key) => (
+              <div 
+                key={key}
+                className="relative group h-10 flex items-center justify-center"
+                onMouseEnter={() => setActiveDropdown(key)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button className="flex items-center gap-2 font-medium text-sm uppercase tracking-wider text-[#F1F3EB] hover:text-[#D4AF37] transition-colors py-4">
+                  {NAV_DATA[key].title}
+                  <ChevronDown 
+                    size={14} 
+                    className={`transition-transform duration-300 ${activeDropdown === key ? 'rotate-180 text-[#D4AF37]' : 'opacity-70'}`} 
+                  />
+                </button>
+                
+                {/* DROPDOWN RENDERED HERE */}
+                <ScrollDropdown categoryKey={key} />
+              </div>
+            ))}
+            <a href="#" className="font-medium text-sm uppercase tracking-wider text-[#F1F3EB] hover:text-[#D4AF37] transition-colors">
+              Shop
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-vedara-green">
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {/* RIGHT ICONS */}
+          <div className="hidden lg:flex items-center gap-6">
+             <div className="flex gap-4 text-[#F1F3EB]">
+               <Search size={20} className="cursor-pointer hover:text-[#D4AF37]" />
+               <ShoppingBag size={20} className="cursor-pointer hover:text-[#D4AF37]" />
+             </div>
+             <button className="bg-[#D4AF37] hover:bg-[#C5A028] text-[#2F3E28] px-6 py-2 rounded-sm font-bold font-serif tracking-wide shadow-lg">
+               Book Consultation
+             </button>
+          </div>
+
+          {/* MOBILE TOGGLE */}
+          <div className="lg:hidden z-50">
+            <button onClick={() => setIsMobileOpen(!isMobileOpen)} className="text-[#F1F3EB]">
+              {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-vedara-light border-b border-stone-200 shadow-xl">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            <a href="#" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-vedara-sand rounded-md">Our Approach</a>
-            <a href="#" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-vedara-sand rounded-md">Programs</a>
-            <a href="#" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-vedara-sand rounded-md">Science</a>
-            <button className="w-full mt-4 bg-vedara-clay text-white px-6 py-3 rounded-md font-bold">
-              Book Consultation
-            </button>
-          </div>
-        </div>
-      )}
+      {/* MOBILE MENU (Standard Slide-in, not Scroll) */}
+      <div 
+        className={`fixed inset-0 z-40 bg-[#F9F5E3] transition-transform duration-300 ease-out lg:hidden pt-24 px-6 overflow-y-auto
+        ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+         <div className="flex flex-col space-y-6">
+            {Object.keys(NAV_DATA).map(key => (
+              <div key={key} className="border-b border-[#2F3E28]/10 pb-4">
+                <h3 className="font-serif text-xl text-[#2F3E28] mb-2 font-bold">{NAV_DATA[key].title}</h3>
+                <div className="flex flex-col gap-2 pl-4">
+                  {NAV_DATA[key].items.map(item => (
+                    <a key={item} href="#" className="text-[#4A5D41] text-sm hover:text-[#D4AF37]">{item}</a>
+                  ))}
+                </div>
+              </div>
+            ))}
+         </div>
+      </div>
     </nav>
   );
 };

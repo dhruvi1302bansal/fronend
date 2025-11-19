@@ -1,10 +1,14 @@
 import React from 'react';
 import { Leaf, Stethoscope, Clock, ArrowRight, Star, PlayCircle, BookOpen, Calendar } from 'lucide-react';
+import Navbar  from '../Components/Navbar.jsx';
+import Footer from '../Components/Footer.jsx';
+
 
 const Home = () => {
   return (
+    
     <main className="font-sans text-gray-800 selection:bg-vedara-clay selection:text-white">
-      
+      <Navbar />
       {/* --- Hero Section --- */}
       <section className="relative pt-20 lg:pt-0 min-h-[90vh] flex items-center bg-vedara-sand overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -207,7 +211,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+        <Footer />
     </main>
   );
 };
