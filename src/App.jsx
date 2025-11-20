@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import Home from './Pages/Home.jsx' 
-import KnowledgeHub from './Pages/KnowledgeHub'
+
 
 
 import Footer from './Components/Footer.jsx'
@@ -28,6 +28,8 @@ function App() {
       </Routes>
     </BrowserRouter>
     <Footer/>
+       <Home /> 
+      
     </>
   )
 }
