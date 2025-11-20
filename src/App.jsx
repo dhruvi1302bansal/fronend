@@ -1,6 +1,7 @@
 
 import './App.css'
-import Home from './pages/Home.jsx' 
+import Home from './Pages/Home.jsx' 
+import KnowledgeHub from './Pages/KnowledgeHub'
 
 
 function App() {
@@ -8,12 +9,8 @@ function App() {
 
   return (
     <>
-      
-
-      <Home />
-
-    
-
+      {/* <Home /> */}
+      <KnowledgeHub />
     </>
   )
 }
