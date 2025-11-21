@@ -532,6 +532,12 @@ const NAV_DATA = {
     path: "/KnowledgeHub", // Mapped to AboutUs as per your routes
     layout: "list",
     items: ["Our Mission", "Doctor Profiles", "Science of Ayurveda", "Blog & Insights", "Case Studies"]
+  },
+  AboutUs:{
+    title: "About Us",
+    path: "/AboutUs",
+    layout: "list",
+    items: ["Our Story", "Meet the Team", "Careers", "Contact Us"]
   }
 };
 

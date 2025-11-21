@@ -38,6 +38,38 @@ const doctors = [
       image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&auto=format&fit=crop"
     }
   ];
+    const testimonials = [
+    {
+      name: "Sarah J.",
+      role: "Tech Executive",
+      text: "I was skeptical about Ayurveda being too 'slow.' Vedara changed that. My chronic acidity resolved in 3 weeks. No heavy metals, no magic pills.",
+    },
+    {
+      name: "Arjun M.",
+      role: "Architect",
+      text: "Finally, a doctor who looked at my blood work AND my lifestyle. The integration of modern science is seamless here.",
+    },
+    {
+      name: "Priya K.",
+      role: "Creative Designer",
+      text: "Dealing with PCOS was exhausting. The approach wasn't just about herbs; it was about syncing with my cycle. I feel like myself again for the first time in years.",
+    },
+    {
+      name: "Michael R.",
+      role: "Management Consultant",
+      text: "My insomnia was ruining my work. The specific diet changes and evening routines did what sleeping pills couldn't. I actually wake up refreshed now.",
+    },
+    {
+      name: "Linda W.",
+      role: "School Teacher",
+      text: "I lost 12kg, but more importantly, my energy levels are stable. No crash diets, just understanding my body type (Dosha) and eating right.",
+    },
+    {
+      name: "David C.",
+      role: "Musician",
+      text: "The skin analysis was spot on. My eczema flared up for years. 2 months of the internal detox and oil application, and my skin is finally clear.",
+    }
+  ];
 
 const HomepageMain = () => {
   return (
@@ -329,26 +361,26 @@ const HomepageMain = () => {
           </div>
         </div>
       </section> */}
-      <section className="py-20 bg-[#F5F5DC] ">
+      {/* <section className="py-20 bg-[#F5F5DC] ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <h2 className="font-serif text-4xl mb-12 text-center ">Real Stories of Restoration</h2>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12"> */}
           
           {/* Card 1 */}
-          <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300">
+          {/* <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300"> */}
             {/* Replaced 'text-vedara-gold' with hex '#D4AF37' */}
-            <div className="flex text-[#D4AF37] mb-4">
+            {/* <div className="flex text-[#D4AF37] mb-4">
               {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
             </div>
             <p className="text-xl italic leading-relaxed mb-6">
               "I was skeptical about Ayurveda being too 'slow.' Vedara changed that. My chronic acidity resolved in 3 weeks. No heavy metals, no magic pills."
             </p>
             <div className="font-bold font-serif text-xl">— Sarah J., Tech Executive</div>
-          </div>
+          </div> */}
 
           {/* Card 2 */}
-          <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300">
+          {/* <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300">
             <div className="flex text-[#D4AF37] mb-4">
               {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
             </div>
@@ -357,6 +389,47 @@ const HomepageMain = () => {
             </p>
             <div className="font-bold font-serif text-xl">— Arjun M., Architect</div>
           </div>
+
+        </div>
+      </div>
+    </section> */}
+        <section className="py-20 bg-[#F5F5DC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-serif text-4xl mb-12 text-center text-[#2F3E28]">
+          Real Stories of Restoration
+        </h2>
+        
+        {/* Grid: 1 col Mobile, 2 cols Tablet, 3 cols Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          {testimonials.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-[#2F3E28]/10 flex flex-col h-full"
+            >
+              {/* Stars */}
+              <div className="flex text-[#D4AF37] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} fill="currentColor" />
+                ))}
+              </div>
+              
+              {/* Quote text - flex-grow pushes the author name to the bottom if text lengths vary */}
+              <p className="text-gray-700 italic leading-relaxed mb-6 flex-grow text-lg">
+                "{item.text}"
+              </p>
+              
+              {/* Author */}
+              <div className="border-t border-gray-100 pt-4">
+                <div className="font-bold font-serif text-xl text-[#2F3E28]">
+                  — {item.name}
+                </div>
+                <div className="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">
+                  {item.role}
+                </div>
+              </div>
+            </div>
+          ))}
 
         </div>
       </div>
