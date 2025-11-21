@@ -1,105 +1,153 @@
-import React from "react";
-import Slider from "react-slick";
+
+
+import FAQ from "@/Components/Faq";
+import { Steps } from "@/Components/Consulting/Steps";
+import { CommonSymtoms } from "@/Components/Consulting/CommonSymtoms";
+import { Specialities } from "@/Components/Consulting/Specialities";
+import ConsultationForm from "@/Components/Consulting/DetailsForm";
 
 export default function ConsultingPage() {
-  const specialties = [
-    "Digestive Health",
-    "Skin & Hair Care",
-    "Joint & Muscle Pain",
-    "Stress & Sleep",
-    "Women's Health",
-    "Weight Management",
-  ];
-  
+
   const doctors = [
     {
       name: "Dr. Asha Verma",
       experience: "12 years",
       degree: "BAMS, MD Ayurveda",
-      img: "https://via.placeholder.com/150",
+      img: "./assests/consulting/demo.JPG",
     },
     {
       name: "Dr. Rohan Iyer",
       experience: "15 years",
       degree: "BAMS, PGD Panchakarma",
-      img: "https://via.placeholder.com/150",
+      img: "./assests/consulting/demo.JPG",
     },
     {
       name: "Dr. Neha Sharma",
       experience: "10 years",
       degree: "BAMS, Ayurvedic Diet Specialist",
-      img: "https://via.placeholder.com/150",
+      img: "./assests/consulting/demo.JPG",
     },
     {
       name: "Dr. Karan Mehta",
       experience: "18 years",
       degree: "Ayurvedic Physician",
-      img: "https://via.placeholder.com/150",
+      img: "./assests/consulting/demo.JPG",
     },
   ];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
+ 
 
   return (
-    <div className="w-full flex flex-col text-[#efe9cb] items-center text-gray-900">
-      {/* Hero Section */}
-      <section className="w-full h-[60vh] text-[#efe9cb] flex flex-col justify-center items-center bg-[#4f6339] text-center p-6">
-        <h1 className="text-5xl font-bold mb-4">Book an Online Ayurveda Consultation</h1>
-        <p className="text-xl max-w-2xl">Connect with certified Ayurvedic doctors for personalized treatment based on your dosha and health goals.</p>
-        <button className="mt-6 px-6 py-3 rounded-full bg-[#834d6f] text-[#efe9cb] font-semibold hover:bg-green-700">Start Consultation</button>
+    <div className="w-full flex flex-col items-center bg-[#efe9cb] text-[#4f6339] overflow-hidden">
+
+      {/* HERO SECTION */}
+      <section className="w-full h-screen flex flex-col justify-center items-center text-center px-6 bg-[#efe9cb] ">
+        <h1 className="text-5xl font-bold max-w-3xl leading-tight">
+          Personalized Ayurveda Consultation for Your Mind, Body & Health
+        </h1>
+        <p className="text-lg mt-4 max-w-2xl opacity-90">
+          Talk to certified Ayurvedic doctors for root-cause based healing. 100% personalized advice.
+        </p>
+
+        <button className="mt-8 px-8 py-4 rounded-full bg-[#834d6f] text-[#efe9cb]  font-bold text-lg hover:scale-105 transition-all shadow-md">
+          Start Your Wellness Journey
+        </button>
       </section>
 
-      {/* Speciality Section */}
-      <section className="w-full max-w-screen h-[80vh] mx-auto py-12 px-8 bg-[#eee9cc] text-[#4f6339]">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Specialties We Cover</h2>
-        <Slider {...sliderSettings}>
-          {specialties.map((item, index) => (
-            <div key={index} className="p-4 ">
-              <div className="bg-green-50 h-[40vh] shadow-md rounded-xl p-6 text-center text-lg font-medium">
-                {item}
-              </div>
+      {/* WHY CHOOSE US */}
+      <section className="w-full py-16 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-8">Why People Trust Vedara</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[ 
+            { title: "Certified Doctors", desc: "Experienced BAMS & MD Ayurveda specialists.",img:"/assests/consulting/doctor.png" },
+            { title: "Root-Cause Healing", desc: "Personalized treatment based on your dosha & history." ,img:"/assests/consulting/holistic.png"},
+            { title: "Holistic Approach", desc: "Mind, body, lifestyle & diet guidance together.",img:"/assests/consulting/holis.png" }
+          ].map((card, i) => (
+            <div key={i} className="p-6 rounded-xl shadow-md bg-white border hover:-translate-y-1 transition">
+              <img className="" src={card.img} alt="" />
+              <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+              <p className="text-sm opacity-80">{card.desc}</p>
             </div>
           ))}
-        </Slider>
+        </div>
+      </section>
+      
+
+      {/* SPECIALTIES */}
+      <Specialities/>
+      
+      {/* common symptoms */}
+      <CommonSymtoms/>
+      
+
+      {/* DOSHA TEST */}
+      <section className="w-full py-8 px-6 bg-[#4f6339] text-[#efe9cb] text-center rounded-2xl max-w-6xl mt-10">
+        <h2 className="text-5xl font-bold mb-4">Find Your Dosha</h2>
+        <p className="max-w-3xl mx-auto text-xl opacity-90 mb-8">
+          Discover whether you're Vata, Pitta or Kapha — and get a personalized treatment plan.
+        </p>
+        <button className="px-8 py-4 bg-[#834d6f]  rounded-full font-bold hover:scale-105 transition">
+          Take Dosha Test
+        </button>
       </section>
 
-      {/* Dosha Section */}
-      <section className="w-full rounded-2xl bg-[#eee9cc] text-[#eee9cc] py-8 px-4 flex flex-col items-center">
-        <div className="rounded-2xl w-[97%] bg-gradient-to-r from-[#834d6f]/70 to-[#834d6f] px-4 py-4">
-            <h2 className="text-4xl text-[#eee9cc] font-bold mb-4">Find Your Dosha</h2>
-            <p className="max-w-5xl text-xl font-semibold  mb-8">Discover your body constitution (Vata, Pitta, Kapha) and book a consultation tailored to your unique needs.</p>
-            <button className="px-6 py-3 rounded-full bg-[#4f6339] text-white font-semibold hover:bg-green-700">Take Dosha Test</button>
+      {/* steps to your test */}
+      <Steps/>
+
+
+      {/* why ayurdeva works  */}
+      <section className="w-full py-20 px-6 bg-[#4f6339] text-[#efe9cb] text-center">
+        <h2 className="text-4xl font-bold mb-6">Why Ayurveda Actually Works</h2>
+        <p className="max-w-2xl mx-auto text-lg opacity-90 mb-12">
+          Ayurveda treats the root cause through personalized healing — combining body type, lifestyle, digestion, and mental health.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[{
+            t: "Holistic Diagnosis",
+            d: "Doctors study your lifestyle, digestion, sleep, stress and dosha."},
+            {t: "Root-Cause Healing", d: "We treat internal imbalance, not just symptoms."},
+            {t: "Natural & Side-Effect Free", d: "Based on herbs, diet & habits that restore balance."},
+          ].map((c, i) => (
+            <div key={i} className="p-6 bg-[#efe9cb] text-[#4f6339] rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">{c.t}</h3>
+              <p className="opacity-90">{c.d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Doctors Section */}
-      <section className="w-full py-16 px-4 bg-[#efe9cb]">
-        <h2 className="text-3xl font-semibold text-center mb-10">Our Expert Doctors</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {/* DOCTORS SECTION */}
+      <section className="w-full py-20 px-6 text-center bg-[#efe9cb]">
+        <h2 className="text-4xl font-bold mb-10">Meet Our Expert Doctors</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
           {doctors.map((doc, idx) => (
-            <div key={idx} className="flex flex-col items-center bg-white p-6 shadow-md rounded-2xl border border-gray-200">
-              <img src={doc.img} alt={doc.name} className="w-32 h-32 rounded-full mb-4 object-cover" />
+            <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border hover:-translate-y-1 transition">
+              <img src={doc.img} alt={doc.name} className="w-28 h-28 mx-auto rounded-full object-cover mb-4" />
               <h3 className="text-xl font-semibold">{doc.name}</h3>
-              <p className="text-sm text-gray-600">Experience: {doc.experience}</p>
-              <p className="text-sm text-gray-600 mb-4">{doc.degree}</p>
+              <p className="text-sm opacity-80">Experience: {doc.experience}</p>
+              <p className="text-sm opacity-80">{doc.degree}</p>
             </div>
           ))}
         </div>
       </section>
+      <ConsultationForm/>
 
       {/* CTA */}
-      <div className="py-16">
-        <button className="px-8 py-4 rounded-full bg-green-700 text-white text-lg font-bold hover:bg-green-800">
-          Ready to Take Your Consulting Test
+      {/* <div className="py-16 text-center">
+        <button className="px-10 py-5 bg-[#4f6339] text-[#efe9cb] text-xl rounded-full font-bold hover:bg-[#3e502e] transition shadow-lg">
+          Book Your Consultation Now
         </button>
-      </div>
+      </div> */}
+      {/* FAQ SECTION */}
+      <FAQ/>
     </div>
   );
 }
+
+
+
+
+
+
+

@@ -13,17 +13,18 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
         {/* <Route path="/knowledgehub" element={</>} /> */}
+        <Route path='/consulting' element={<ConsultingPage/>} />
 
          
     
       </Routes>
     </BrowserRouter>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }
