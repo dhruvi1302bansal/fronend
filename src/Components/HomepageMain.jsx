@@ -1,5 +1,43 @@
 import React from 'react';
 import { Leaf, Stethoscope, Clock, ArrowRight, Star, PlayCircle, BookOpen, Calendar } from 'lucide-react';
+const doctors = [
+    {
+      name: "Dr. Ananya Rao",
+      role: "BAMS, MD (Ay) • Autoimmune Specialist",
+      quote: "Healing begins when we listen to the body's quiet signals.",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop"
+    },
+    {
+      name: "Dr. Rajesh Verma",
+      role: "BAMS, PhD • Pain Management",
+      quote: "We don't just treat the pain, we treat the person.",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&auto=format&fit=crop"
+    },
+    {
+      name: "Dr. Meera Kapoor",
+      role: "BAMS, MS • Women's Health & Fertility",
+      quote: "Balance your hormones, and you balance your life.",
+      image: "https://images.unsplash.com/photo-1594824476969-51c44d7e618e?q=80&w=200&auto=format&fit=crop"
+    },
+    {
+      name: "Dr. Vikram Singh",
+      role: "BAMS • Gut Health & Metabolism",
+      quote: "Agni (digestive fire) is the root of all health.",
+      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&auto=format&fit=crop"
+    },
+    {
+      name: "Dr. Priya Sharma",
+      role: "MD (Ay) • Dermatology & Skin Care",
+      quote: "True radiance comes from inner purification.",
+      image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?q=80&w=200&auto=format&fit=crop"
+    },
+    {
+      name: "Dr. Sanjay Gupta",
+      role: "PhD (Ayurveda) • Mental Wellness & Sleep",
+      quote: "A calm mind is the most potent medicine.",
+      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&auto=format&fit=crop"
+    }
+  ];
 
 const HomepageMain = () => {
   return (
@@ -204,21 +242,21 @@ const HomepageMain = () => {
       </section>
 
       {/* --- Doctor Profiles --- */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-4xl text-center text-vedara-green mb-12">Experts in Integrative Ayurveda</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"> */}
             {/* Doctor 1 */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-vedara-sand border border-stone-100">
+            {/* <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-vedara-sand border border-stone-100">
               <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop" alt="Dr Ananya" className="w-24 h-24 rounded-full object-cover" />
               <div className="text-center sm:text-left">
                 <h3 className="font-serif text-2xl text-vedara-green">Dr. Ananya Rao</h3>
                 <p className="text-sm font-bold text-gray-500 mb-2">BAMS, MD (Ay) • Autoimmune Specialist</p>
                 <p className="text-gray-600 italic">"Healing begins when we listen to the body's quiet signals."</p>
               </div>
-            </div>
+            </div> */}
             {/* Doctor 2 */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-vedara-sand border border-stone-100">
+            {/* <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-vedara-sand border border-stone-100">
               <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&auto=format&fit=crop" alt="Dr Rajesh" className="w-24 h-24 rounded-full object-cover" />
               <div className="text-center sm:text-left">
                 <h3 className="font-serif text-2xl text-vedara-green">Dr. Rajesh Verma</h3>
@@ -228,10 +266,49 @@ const HomepageMain = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+         <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-4xl text-vedara-green mb-4">Experts in Integrative Ayurveda</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Our Vaidyas combine ancient wisdom with modern clinical experience to provide root-cause healing.
+          </p>
+        </div>
+
+        {/* Grid Layout: 1 col Mobile, 2 cols Tablet, 3 cols Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+          {doctors.map((doc, index) => (
+            <div 
+              key={index} 
+              className="flex flex-col items-center text-center sm:items-start sm:text-left sm:flex-row gap-5 p-6 rounded-2xl bg-vedara-sand border border-stone-100 hover:shadow-lg transition-shadow duration-300"
+              // Note: If 'bg-vedara-sand' isn't in your config yet, use 'bg-[#F9F5E3]' or 'bg-orange-50'
+            >
+              <img 
+                src={doc.image} 
+                alt={doc.name} 
+                className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-sm shrink-0" 
+              />
+              <div>
+                <h3 className="font-serif text-xl text-vedara-green font-medium">{doc.name}</h3>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">{doc.role}</p>
+                <p className="text-gray-600 text-sm italic leading-relaxed">"{doc.quote}"</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Optional 'View All' Button */}
+        <div className="text-center mt-12">
+            <button className="px-8 py-3 border border-[#2F3E28] text-[#2F3E28] font-serif hover:bg-[#2F3E28] hover:text-white transition-colors rounded-sm">
+                View All Specialists
+            </button>
+        </div>
+      </div>
+    </section>
 
       {/* --- Testimonials --- */}
-      <section className="py-20 bg-vedara-green text-white">
+      {/* <section className="py-20 bg-vedara-green text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-4xl mb-12 text-center">Real Stories of Restoration</h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -251,7 +328,39 @@ const HomepageMain = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="py-20 bg-[#F5F5DC] ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <h2 className="font-serif text-4xl mb-12 text-center ">Real Stories of Restoration</h2>
+        
+        <div className="grid md:grid-cols-2 gap-12">
+          
+          {/* Card 1 */}
+          <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300">
+            {/* Replaced 'text-vedara-gold' with hex '#D4AF37' */}
+            <div className="flex text-[#D4AF37] mb-4">
+              {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
+            </div>
+            <p className="text-xl italic leading-relaxed mb-6">
+              "I was skeptical about Ayurveda being too 'slow.' Vedara changed that. My chronic acidity resolved in 3 weeks. No heavy metals, no magic pills."
+            </p>
+            <div className="font-bold font-serif text-xl">— Sarah J., Tech Executive</div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white/5 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition duration-300">
+            <div className="flex text-[#D4AF37] mb-4">
+              {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
+            </div>
+            <p className="text-xl italic leading-relaxed mb-6">
+              "Finally, a doctor who looked at my blood work AND my lifestyle. The integration of modern science is seamless here."
+            </p>
+            <div className="font-bold font-serif text-xl">— Arjun M., Architect</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
       {/* --- Knowledge Hub --- */}
       <section className="py-20 bg-vedara-light">

@@ -9,6 +9,7 @@ import Assessments from './Pages/Assessments.jsx'
 import AboutUs from './Pages/AboutUs.jsx'
 import ContactSupport from './Pages/ContactSupport.jsx'
 import Shop from './Pages/Shop.jsx'
+import KnowledgeHub from './Pages/KnowledgeHub';
 
 // import ConsultingPage from './Pages/Consulting'
 import "slick-carousel/slick/slick.css";
@@ -32,7 +33,7 @@ function App() {
         <Route path="/Assessments" element={<Assessments/>} />
         <Route path="/AboutUs" element={<AboutUs/>}/>
         <Route path="/ContactSupport" element={<ContactSupport/>}/>
-        <Route path="/AboutUs" element={<AboutUs/>}/>
+        <Route path="/KnowledgeHub" element={<KnowledgeHub/>}/>
         <Route path="/Shop" element={<Shop/>} />
       </Routes>
        <Footer />

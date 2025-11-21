@@ -208,7 +208,7 @@ const KnowledgeHub = () => {
       </div>
 
       {/* --- PAGE FOOTER --- */}
-      <footer className="bg-[#2C3E50] text-[#F5F5DC] py-12 relative z-20 border-t-8 border-[#808000]">
+      {/* <footer className="bg-[#2C3E50] text-[#F5F5DC] py-12 relative z-20 border-t-8 border-[#808000]">
          <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
                <h2 className="text-2xl font-serif font-bold tracking-wider">VEDARA</h2>
@@ -224,7 +224,7 @@ const KnowledgeHub = () => {
                &copy; 2024 Vedara Ayurveda. All Rights Reserved.
             </div>
          </div>
-      </footer>
+      </footer> */}
 
     </div>
   );

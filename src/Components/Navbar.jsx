@@ -528,8 +528,8 @@ const NAV_DATA = {
     items: ["Book 1:1 with Vaidya", "Pricing & Packages", "Follow-up Booking", "Find a Center"]
   },
   wisdom: {
-    title: "Wisdom Hub",
-    path: "/AboutUs", // Mapped to AboutUs as per your routes
+    title: "Knowledge Hub",
+    path: "/KnowledgeHub", // Mapped to AboutUs as per your routes
     layout: "list",
     items: ["Our Mission", "Doctor Profiles", "Science of Ayurveda", "Blog & Insights", "Case Studies"]
   }
