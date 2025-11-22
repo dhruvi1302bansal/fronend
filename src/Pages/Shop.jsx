@@ -156,7 +156,7 @@ const PRODUCTS = [
     cures: "Constipation, Indigestion",
     description: "The classic three-fruit blend for gentle daily detox and digestive regulation.",
     benefits: ["Regulates bowel movements", "Rich in Vitamin C", "Antioxidant support"],
-    image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&q=80&w=600"
+    image: "https://media.istockphoto.com/id/1437238531/photo/terminalia-chebula.webp?a=1&b=1&s=612x612&w=0&k=20&c=frVhaMNyyn1xkQhPN_mDPfpvASn3pMKDdwhw7g4yHws="
   },
   {
     id: 2,
@@ -168,7 +168,7 @@ const PRODUCTS = [
     cures: "Stress, Fatigue, Insomnia",
     description: "An ancient adaptogen to help your body manage stress and boost vitality.",
     benefits: ["Reduces cortisol levels", "Boosts energy & stamina", "Improves sleep quality"],
-    image: "https://images.unsplash.com/photo-1607989198526-5d159a91e527?auto=format&fit=crop&q=80&w=600"
+    image: "https://media.istockphoto.com/id/1455659205/photo/ashwagandha-roots-and-powder-known-as-withania-somnifera-in-white-bowl-on-wooden-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=CE9NtN69nWA6hUDIBraYxVe0DywbqzCmE78w0oDW0eE="
   },
   {
     id: 3,
@@ -193,7 +193,7 @@ const PRODUCTS = [
     cures: "Gut Inflammation, Toxins",
     description: "Everything you need for a traditional mono-diet reset. Includes Mung dal, rice, and spice mix.",
     benefits: ["Resets digestive fire (Agni)", "Eliminates deep-seated toxins", "Improves mental clarity"],
-    image: "https://images.unsplash.com/photo-1626365183209-b29b85c998d5?auto=format&fit=crop&q=80&w=600"
+    image: "https://media.istockphoto.com/id/2227474971/photo/pink-pouch-with-herbal-tea-glass-supplement-powder-sachets.webp?a=1&b=1&s=612x612&w=0&k=20&c=2o-gqyOBTkOy0LgJWMIpt_xwNP-zy5nqYtMmKUpQbgI="
   },
   {
     id: 5,
@@ -217,7 +217,7 @@ const PRODUCTS = [
     cures: "Brain Fog, Memory Loss",
     description: "Medicinal ghee infused with Brahmi to sharpen intellect and cool the mind.",
     benefits: ["Enhances cognitive function", "Calms the nervous system", "Nourishes deep tissues"],
-    image: "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=600"
+    image: "https://media.istockphoto.com/id/2152779430/photo/close-up-of-the-wooden-havan-spoon-used-during-pooja-in-a-south-indian-hindu-wedding-ceremony.webp?a=1&b=1&s=612x612&w=0&k=20&c=e9pgEyUdmaMlLKspUMrTZkQhj_hK69CygRsKIL3fJ68="
   },
   {
     id: 7,
@@ -229,7 +229,7 @@ const PRODUCTS = [
     cures: "Anxiety, Anger",
     description: "Hand-rolled natural incense for meditation and space clearing.",
     benefits: ["Instant mood lifter", "Promotes deep meditation", "Purifies air"],
-    image: "https://images.unsplash.com/photo-1602606393866-7d285f184ba8?auto=format&fit=crop&q=80&w=600"
+    image: "https://media.istockphoto.com/id/2153776510/photo/burning-japanese-incense-stick-on-a-wooden-holder-and-pink-orchid-flowers.webp?a=1&b=1&s=612x612&w=0&k=20&c=Rb1BnbOKDI2KNOFbmVgPoVSHO0TeAD3lMWWOE93UotA="
   },
   {
     id: 8,
