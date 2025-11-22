@@ -14,6 +14,7 @@ import Consulting from './Pages/Consulting.jsx';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
  import Footer from './Components/Footer';
+ import { CartProvider } from './components/CartContext'; 
 
 
 
@@ -22,8 +23,8 @@ function App() {
 
   return (
     
-   
-    <BrowserRouter>
+   <CartProvider>
+        <BrowserRouter>
      <Navbar /> 
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -37,6 +38,8 @@ function App() {
       </Routes>
        <Footer />
     </BrowserRouter>
+   </CartProvider>
+
    
     
   )
