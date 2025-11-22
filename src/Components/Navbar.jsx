@@ -523,7 +523,7 @@ const NAV_DATA = {
   },
   consultation: {
     title: "Consultation",
-    path: "/Consultation", // Matches App.jsx spelling
+    path: "/Consulting", // Matches App.jsx spelling
     layout: "list",
     items: ["Book 1:1 with Vaidya", "Pricing & Packages", "Follow-up Booking", "Find a Center"]
   },
@@ -702,7 +702,7 @@ const Navbar = () => {
                </Link>
              </div>
              {/* Note: Updated to match your App.jsx spelling */}
-             <Link to="/Consultation" className="bg-[#D4AF37] hover:bg-[#C5A028] text-[#2F3E28] px-6 py-2 rounded-sm font-bold font-serif tracking-wide shadow-lg">
+             <Link to="/Consulting" className="bg-[#D4AF37] hover:bg-[#C5A028] text-[#2F3E28] px-6 py-2 rounded-sm font-bold font-serif tracking-wide shadow-lg">
                Book Consultation
              </Link>
           </div>
@@ -753,7 +753,7 @@ const Navbar = () => {
               <Link to="/ContactSupport" onClick={() => setIsMobileOpen(false)} className="font-serif text-xl text-[#2F3E28] font-bold">
                 Support
               </Link>
-              <Link to="/Consultation" onClick={() => setIsMobileOpen(false)} className="bg-[#D4AF37] text-[#2F3E28] py-3 text-center font-bold font-serif shadow-lg rounded-sm">
+              <Link to="/Consulting" onClick={() => setIsMobileOpen(false)} className="bg-[#D4AF37] text-[#2F3E28] py-3 text-center font-bold font-serif shadow-lg rounded-sm">
                 Book Consultation
               </Link>
             </div>

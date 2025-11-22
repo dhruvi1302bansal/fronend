@@ -13,6 +13,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Leaf, Shield, Sun } from 'lucide-react';
 
+
 // --- HELPER FOR ID GENERATION (Must match Navbar logic) ---
 const slugify = (text) => {
   return text
@@ -47,7 +48,10 @@ const PROGRAMS = [
   {
     title: "Skin Care & Radiance",
     desc: "Root-cause treatment for Acne, Psoriasis, Eczema, and Dermatitis. We purify the blood (Rakta Dhatu) for lasting inner glow.",
-    image: "https://images.unsplash.com/photo-1576426863848-c2185fc6e871?q=80&w=800&auto=format&fit=crop",
+    // image: "https://images.unsplash.com/photo-1576426863848-c2185fc6e871?q=80&w=800&auto=format&fit=crop",
+    // image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=725&auto=format&fit=crop",
+    // images: <img src="/Images/ProgramImages/sunny-ng-KVIlNRoGwxk-unsplash.jpg" alt="Skin Care" />,
     features: ["Blood Purification", "Herbal Lepams", "Glow Therapy"]
   },
   {
@@ -71,7 +75,8 @@ const PROGRAMS = [
   {
     title: "Respiratory & Allergies",
     desc: "Build lung strength and immunity against Asthma, Sinusitis, and seasonal allergies using Pranayama and respiratory tonics.",
-    image: "https://images.unsplash.com/photo-1527137342181-191f53eb0915?q=80&w=800&auto=format&fit=crop",
+    // image: "https://images.unsplash.com/photo-1527137342181-191f53eb0915?q=80&w=800&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1672037884220-3c42b63de4f6?w=600&auto=format&fit=crop",
     features: ["Lung Toning", "Sinus Cleaning", "Allergy Defense"]
   },
   {
@@ -83,7 +88,7 @@ const PROGRAMS = [
   {
     title: "Sexual Wellness",
     desc: "Vajikarana therapy to restore vitality, libido, and reproductive health for both men and women in a confidential setting.",
-    image: "https://images.unsplash.com/photo-1620749597697-b0f042c29642?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1504194569341-48a2e831a3a7?w=600&auto=format&fit=crop",
     features: ["Libido Boost", "Vitality Tonic", "Reproductive Health"]
   },
   {
@@ -95,7 +100,7 @@ const PROGRAMS = [
   {
     title: "Post-Illness Immunity",
     desc: "Rasayana (Rejuvenation) therapy to rebuild strength and energy reserves after viral fevers, surgeries, or long-term illness.",
-    image: "https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=800&auto=format&fit=crop",
+    image: "https://media.istockphoto.com/id/1388947154/photo/paper-sheet-with-word-immunity-and-first-aid-kit-on-wooden-table-closeup.webp?a=1&b=1&s=612x612&w=0&k=20&c=6fPc4kxQ8RRwObM55S5VkI5p3YWwc87oEDr126vRzzY=",
     features: ["Energy Restoration", "Cellular Repair", "Detoxification"]
   }
 ];
@@ -143,21 +148,21 @@ const Programs = () => {
       {/* --- INTRO FEATURES --- */}
       <section className="py-12 border-b border-[#2F3E28]/10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6">
+          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6 hover:scale-105 hover:bg-#eae1c0">
             <div className="w-12 h-12 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-[#2F3E28]">
               <Leaf size={24} />
             </div>
             <h3 className="font-serif font-bold text-lg text-[#2F3E28]">100% Natural</h3>
             <p className="text-sm text-gray-600">Pure herbal formulations without heavy metals.</p>
           </div>
-          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6">
+          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6 hover:scale-105 hover:bg-#eae1c0">
             <div className="w-12 h-12 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-[#2F3E28]">
               <Sun size={24} />
             </div>
             <h3 className="font-serif font-bold text-lg text-[#2F3E28]">Personalized</h3>
             <p className="text-sm text-gray-600">Tailored to your unique Prakriti (Dosha).</p>
           </div>
-          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6 ">
+          <div className="flex flex-col items-center gap-3 shadow-sm rounded-md hover:shadow-md transition-shadow bg-white/50 p-6 hover:scale-105 hover:bg-#eae1c0">
             <div className="w-12 h-12 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-[#2F3E28]">
               <Shield size={24} />
             </div>
@@ -219,16 +224,16 @@ const Programs = () => {
       </section>
 
       {/* --- BOTTOM BANNER --- */}
-      <section className="bg-[#BA9D8A] py-16 text-center px-6">
+      <section className="bg-[#BA9D8A] py-16 text-center px-6 ">
         <h2 className="text-3xl font-serif text-white mb-4">Not sure which program fits you?</h2>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-300 mb-8 max-w-2xl mx-auto font-bold">
           Take our free AI-powered Dosha Quiz or speak to a health counselor to find your path to wellness.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link to="/Assessments" className="px-8 py-3 bg-[#F1F3EB] text-[#2F3E28] font-bold rounded-sm hover:bg-white transition-colors">
+          <Link to="/Assessments" className="px-8 py-3 bg-[#F1F3EB] text-[#2F3E28] font-bold rounded-sm hover:bg-white transition-colors hover:shadow-md hover:scale-105">
             Take Free Quiz
           </Link>
-          <Link to="/Consulation" className="px-8 py-3 border border-[#D4AF37] text-[#D4AF37] font-bold rounded-sm hover:bg-[#D4AF37] hover:text-[#2F3E28] transition-colors">
+          <Link to="/Consulation" className=" bg-[#BAB86C]  px-8 py-3 border-2 border-[#D4AF37] text-[] font-bold rounded-sm hover:bg-[#D4AF37] hover:text-[#2F3E28] transition-colors hover:shadow-md hover:scale-105">
             Talk to an Expert
           </Link>
         </div>
