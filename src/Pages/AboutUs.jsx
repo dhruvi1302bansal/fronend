@@ -300,11 +300,11 @@ const AboutUs = () => {
               to eradicate disease from the root.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-[#F5F5DC] p-4 rounded-lg border border-[#2F3E28]/10">
+              <div className="bg-[#F5F5DC] p-4 rounded-lg border border-[#2F3E28]/10 hover:shadow-lg transition-shadow">
                 <h4 className="font-serif font-bold text-[#2F3E28] text-2xl">50+</h4>
                 <p className="text-sm text-gray-600">Certified Vaidyas</p>
               </div>
-              <div className="bg-[#F5F5DC] p-4 rounded-lg border border-[#2F3E28]/10">
+              <div className="bg-[#F5F5DC] p-4 rounded-lg border border-[#2F3E28]/10 hover:shadow-lg transition-shadow">
                 <h4 className="font-serif font-bold text-[#2F3E28] text-2xl">12k+</h4>
                 <p className="text-sm text-gray-600">Patients Healed</p>
               </div>

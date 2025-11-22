@@ -772,6 +772,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from './CartContext'; // Ensure path is correct
 import CartSidebar from './CartSidebar'; // Ensure path is correct
 
+
 // --- COLOR PALETTE ---
 const COLORS = {
   oliveDark: "#2F3E28",      
@@ -818,6 +819,12 @@ const NAV_DATA = {
     path: "/AboutUs",
     layout: "list",
     items: ["Our Story", "Meet the Team", "Careers", "Contact Us"]
+  },
+  ContactSupport:{
+    title: "Support",
+    path: "/ContactSupport",
+    layout: "list",
+    items: ["Help Center", "FAQs", "Live Chat", "Email Support","Refund Policy"]
   }
 };
 
@@ -949,7 +956,7 @@ const Navbar = () => {
             </Link>
 
             {/* DESKTOP MENU */}
-            <div className="hidden lg:flex items-center space-x-10 h-full">
+            <div className="hidden lg:flex items-center space-x-7 h-full">
               {Object.keys(NAV_DATA).map((key) => (
                 <div 
                   key={key}
@@ -1049,9 +1056,9 @@ const Navbar = () => {
                 <Link to="/Shop" onClick={() => setIsMobileOpen(false)} className="font-serif text-xl text-[#2F3E28] font-bold">
                   Shop
                 </Link>
-                <Link to="/ContactSupport" onClick={() => setIsMobileOpen(false)} className="font-serif text-xl text-[#2F3E28] font-bold">
+                {/* <Link to="/ContactSupport" onClick={() => setIsMobileOpen(false)} className="font-serif text-xl text-[#2F3E28] font-bold">
                   Support
-                </Link>
+                </Link> */}
                 <Link to="/Consulting" onClick={() => setIsMobileOpen(false)} className="bg-[#D4AF37] text-[#2F3E28] py-3 text-center font-bold font-serif shadow-lg rounded-sm">
                   Book Consultation
                 </Link>
