@@ -17,7 +17,7 @@ const Footer = () => {
         </p>
         
         {/* Button: Antique Gold/Moss (Stands out beautifully on Olive) */}
-        <button className="bg-[#8F9648] hover:bg-[#7A8235] text-white px-10 py-4 rounded-sm font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 tracking-wider border border-[#aeb56d]/30">
+        <button className="bg-[#8F9648] hover:bg-[#7A8235] text-white px-10 py-4 rounded-sm font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 tracking-wider border border-[#aeb56d]/30 hover:shadow-white">
           Book Your Consultation
         </button>
 
