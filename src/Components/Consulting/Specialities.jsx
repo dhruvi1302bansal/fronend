@@ -60,32 +60,49 @@ export const Specialities = () => {
     dots: true,
     infinite: true,
     speed: 500,
+    autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
+
   return (
-    <section className="w-full py-16 px-8 ">
-            <h2 className="text-4xl font-bold text-center mb-8">Our Healing Programs</h2>
-    
-            <Slider {...sliderSettings}>
-              {data.map(item => (
-                <div key={item.id} className="px-4">
-                  <div className="group bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-full h-64 object-contain transform transition duration-500 group-hover:scale-105"
-                    />
-                    <p className="text-center py-4 font-semibold">{item.title}</p>
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </section>
+    <section className="w-full py-16 px-4 md:px-8">
+      <h2 className="text-4xl font-bold text-center mb-8">Our Healing Programs</h2>
+      
+      <div className="max-w-6xl mx-auto"> 
+        <Slider {...sliderSettings}>
+          {data.map(item => (
+            <div key={item.id} className="px-4">
+              <div className="group bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-64 object-contain transform transition duration-500 group-hover:scale-105"
+                />
+                <p className="text-center py-4 font-semibold">{item.title}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
+
   )
 }

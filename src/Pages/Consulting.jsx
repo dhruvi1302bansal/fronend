@@ -41,21 +41,25 @@ export default function ConsultingPage() {
     <div className="w-full flex flex-col items-center bg-[#efe9cb] text-[#4f6339] overflow-hidden">
 
       {/* HERO SECTION */}
-      <section className="w-full h-screen flex flex-col justify-center items-center text-center px-6 bg-[#efe9cb] ">
-        <h1 className="text-5xl font-bold max-w-3xl leading-tight">
+      <section className="w-full min-h-screen flex flex-col justify-center items-center text-center px-6 py-12 bg-[#efe9cb]">
+
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl leading-snug md:leading-tight text-[#4f6339]">
           Personalized Ayurveda Consultation for Your Mind, Body & Health
         </h1>
-        <p className="text-lg mt-4 max-w-2xl opacity-90">
+        
+        <p className="text-base sm:text-lg md:text-xl mt-4 max-w-2xl opacity-90 text-[#4f6339]">
           Talk to certified Ayurvedic doctors for root-cause based healing. 100% personalized advice.
         </p>
-
-        <button className="mt-8 px-8 py-4 rounded-full bg-[#834d6f] text-[#efe9cb]  font-bold text-lg hover:scale-105 transition-all shadow-md">
+        
+        <button className="mt-8 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-[#834d6f] 
+          text-[#efe9cb] font-bold text-lg hover:scale-105 transition-all shadow-md">
           Start Your Wellness Journey
         </button>
       </section>
 
+
       {/* WHY CHOOSE US */}
-      <section className="w-full py-16 px-6 text-center">
+      <section className="w-full  py-16 px-6 text-center ">
         <h2 className="text-4xl font-bold mb-8">Why People Trust Vedara</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[ 
@@ -81,15 +85,23 @@ export default function ConsultingPage() {
       
 
       {/* DOSHA TEST */}
-      <section className="w-full py-8 px-6 bg-[#4f6339] text-[#efe9cb] text-center rounded-2xl max-w-6xl mt-10">
-        <h2 className="text-5xl font-bold mb-4">Find Your Dosha</h2>
-        <p className="max-w-3xl mx-auto text-xl opacity-90 mb-8">
+      <section className="w-[80%] md:w-full max-w-6xl mx-auto py-8 mb-20 px-4 
+        bg-[#4f6339] text-[#efe9cb] text-center rounded-2xl mt-10">
+        
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          Find Your Dosha
+        </h2>
+
+        <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto opacity-90 mb-8">
           Discover whether you're Vata, Pitta or Kapha — and get a personalized treatment plan.
         </p>
-        <button className="px-8 py-4 bg-[#834d6f]  rounded-full font-bold hover:scale-105 transition">
+
+        <button className="px-6 py-3 sm:px-8 sm:py-4 bg-[#834d6f] rounded-full font-bold 
+          hover:scale-105 transition">
           Take Dosha Test
         </button>
       </section>
+
 
       {/* steps to your test */}
       <Steps/>
