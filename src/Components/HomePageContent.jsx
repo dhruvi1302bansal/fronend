@@ -20,7 +20,7 @@ const doctors = [
     name: "Dr. Meera Kapoor",
     role: "BAMS, MS • Women's Health & Fertility",
     quote: "Balance your hormones, and you balance your life.",
-    image: "https://images.unsplash.com/photo-1659353888906-adb3e0041693?w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1594824476969-51c44d7e618e?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "Dr. Vikram Singh",
@@ -39,25 +39,6 @@ const doctors = [
     role: "PhD (Ayurveda) • Mental Wellness & Sleep",
     quote: "A calm mind is the most potent medicine.",
     image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&auto=format&fit=crop"
-  },
-  // --- Newly Added Doctors ---
-  {
-    name: "Dr. Arjun Nair",
-    role: "BAMS, MD • Sports Medicine & Marma",
-    quote: "Mobility is the expression of life force (Prana).",
-    image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    name: "Dr. Kavita Desai",
-    role: "BAMS • Pediatrics (Kaumarabhritya)",
-    quote: "Nourishing a child means nourishing the future.",
-    image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=200&auto=format&fit=crop"
-  },
-  {
-    name: "Dr. Rohan Mehta",
-    role: "MD (Ay) • Panchakarma Specialist",
-    quote: "Deep cleansing resets the biological rhythm.",
-    image: "https://images.unsplash.com/photo-1659353885824-1199aeeebfc6?w=600&auto=format&fit=crop"
   }
 ];
 
@@ -123,26 +104,17 @@ const allPrograms = [
   { 
     title: "Joint & Mobility", 
     for: "Arthritis, Chronic Pain", 
-    // img: "https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&q=80&w=500"
-    img: "https://media.istockphoto.com/id/2153075437/photo/doctor-holding-x-ray-and-examines-child-leg.webp?a=1&b=1&s=612x612&w=0&k=20&c=aO8-1P8MdL8xMlyw4uPxp6tczCVpHKxtiJNWq06kQ1Q="
-
+    img: "https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&q=80&w=500" 
   }
 ];
 
 // --- Main Component ---
 
 const HomePageContent = () => {
-  // State for Programs
   const [showAll, setShowAll] = useState(false);
-  
-  // State for Doctors (New)
-  const [showAllDoctors, setShowAllDoctors] = useState(false);
 
   // Logic to show 3 or all programs
   const visiblePrograms = showAll ? allPrograms : allPrograms.slice(0, 3);
-  
-  // Logic to show 3 or all doctors
-  const visibleDoctors = showAllDoctors ? doctors : doctors.slice(0, 3);
 
   return (
     <div className="font-sans text-gray-800 selection:bg-[#556B2F] selection:text-white">
@@ -298,7 +270,7 @@ const HomePageContent = () => {
         </div>
       </section>
 
-      {/* --- Doctor Profiles (UPDATED) --- */}
+      {/* --- Doctor Profiles --- */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -310,7 +282,7 @@ const HomePageContent = () => {
 
           {/* Grid Layout: 1 col Mobile, 2 cols Tablet, 3 cols Desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
-            {visibleDoctors.map((doc, index) => (
+            {doctors.map((doc, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center text-center sm:items-start sm:text-left sm:flex-row gap-5 p-6 rounded-2xl bg-[#F5F5DC] border border-stone-100 hover:shadow-lg transition-shadow duration-300"
@@ -329,13 +301,10 @@ const HomePageContent = () => {
             ))}
           </div>
 
-          {/* Functional 'View All' Button */}
+          {/* Optional 'View All' Button */}
           <div className="text-center mt-12">
-            <button 
-              onClick={() => setShowAllDoctors(!showAllDoctors)}
-              className="px-8 py-3 border border-[#2F3E28] text-[#2F3E28] font-serif hover:bg-[#2F3E28] hover:text-white transition-colors rounded-sm"
-            >
-              {showAllDoctors ? "Show Less" : "View All Specialists"}
+            <button className="px-8 py-3 border border-[#2F3E28] text-[#2F3E28] font-serif hover:bg-[#2F3E28] hover:text-white transition-colors rounded-sm">
+              View All Specialists
             </button>
           </div>
         </div>
