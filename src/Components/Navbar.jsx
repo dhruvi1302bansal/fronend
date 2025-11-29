@@ -943,7 +943,7 @@ const Navbar = () => {
         style={{ backgroundColor: COLORS.oliveDark }}
       >
         <div className={`w-full px-6 lg:px-12 transition-all duration-300 ${scrolled ? 'py-2' : 'py-5'}`}>
-          <div className="flex justify-between items-center relative">
+          <div className="flex justify-center items-center relative gap-4">
             
             {/* LOGO */}
             <Link to="/" className="flex items-center gap-3 cursor-pointer z-50">
@@ -984,11 +984,9 @@ const Navbar = () => {
             </div>
 
             {/* RIGHT ICONS */}
-            <div className="hidden lg:flex items-center gap-6">
-              <div className="flex gap-4 text-[#F1F3EB]">
+            <div className="hidden lg:flex items-center">
+              {/* <div className="flex gap-4 text-[#F1F3EB]">
                 <Search size={20} className="cursor-pointer hover:text-[#D4AF37]" />
-                
-                {/* --- MODIFIED: Shopping Bag Icon --- */}
                 <button onClick={toggleCart} className="relative cursor-pointer hover:text-[#D4AF37] transition-colors">
                   <ShoppingBag size={20} />
                   {cartItems.length > 0 && (
@@ -997,7 +995,7 @@ const Navbar = () => {
                     </span>
                   )}
                 </button>
-              </div>
+              </div> */}
               <Link to="/Consulting" className="bg-[#D4AF37] hover:bg-[#C5A028] text-[#2F3E28] px-6 py-2 rounded-sm font-bold font-serif tracking-wide shadow-lg">
                 Book Consultation
               </Link>

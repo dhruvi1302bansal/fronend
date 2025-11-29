@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -24,8 +25,22 @@ const Footer = () => {
         {/* Copyright & Links: Muted Olive/Grey */}
         <div className="mt-16 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-[#7D8C74]">
           <span>© 2025 VEDARA Health. All rights reserved.</span>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors duration-300">Privacy Policy</a>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors duration-300">Terms of Service</a>
+          <p className=' className=" hover:text-white transition-colors duration-300"'><Link to="/Privacy-policy">Privacy Policy</Link></p>
+          <p className=' className=" hover:text-white transition-colors duration-300"'><Link to="/terms-conditions">Terms of Service</Link></p>
+          {/* Careers / Doctor Registration */}
+          <div className="">
+            <p className=" text-sm hover:text-white">
+              Partner with us as a Registered Ayurvedic Practitioner. Explore Careers
+            </p>
+
+            {/* <a 
+              href="/careers"
+              className="inline-block bg-transparent border border-[#8F9648] text-[#F1F3EB] px-6 py-3 rounded-sm font-semibold hover:bg-[#8F9648]/20 transition-all duration-300"
+            >
+              Explore Careers
+            </a> */}
+          </div>
+
         </div>
       </div>
     </footer>

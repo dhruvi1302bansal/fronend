@@ -15,6 +15,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
  import Footer from './Components/Footer';
  import { CartProvider } from './components/CartContext'; 
+import Login from './Pages/LoginPage';
+import RegisterForm from './Pages/Registration';
+import PatientRegisterForm from './Pages/PatientRegistration';
+import DoctorRegisterForm from './Pages/DoctorRegistrationForm';
+import ScrollToTop from './utils/scrollToTop';
 
 
 
@@ -24,7 +29,8 @@ function App() {
   return (
     
    <CartProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+     <ScrollToTop/>
      <Navbar /> 
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -35,6 +41,9 @@ function App() {
         <Route path="/ContactSupport" element={<ContactSupport/>}/>
         <Route path="/KnowledgeHub" element={<KnowledgeHub/>}/>
         <Route path="/Shop" element={<Shop/>} />
+        <Route path='/doctor-registration' element={<DoctorRegisterForm/>}/>
+         <Route path='/patient-registration' element={<PatientRegisterForm/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
        <Footer />
     </BrowserRouter>
