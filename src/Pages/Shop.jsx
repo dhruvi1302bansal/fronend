@@ -142,8 +142,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Star, ShoppingBag, ChevronLeft, ChevronRight, Leaf, Activity, HeartPulse } from 'lucide-react';
-import { useCart } from '../components/CartContext'; // Adjust path if needed
-
+import { useCart } from '@/Components/CartContext';
+// import { useCart } from '../components/CartContext'; // Adjust path if needed
+// import { CartProvider } from '../components/CartContext';
 // --- EXTENDED PRODUCT DATA ---
 const PRODUCTS = [
   {
