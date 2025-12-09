@@ -14,7 +14,7 @@ import Consulting from './Pages/Consulting.jsx';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
  import Footer from './Components/Footer';
- import { CartProvider } from './components/CartContext'; 
+ import { CartProvider } from './Components/CartContext';
 import Login from './Pages/LoginPage';
 import RegisterForm from './Pages/Registration';
 import PatientRegisterForm from './Pages/PatientRegistration';
